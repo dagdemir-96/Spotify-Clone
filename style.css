@@ -1,0 +1,353 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+}
+
+aside {
+  background-color: #282828;
+  padding: 20px;
+  border-radius: 10px;
+}
+@media (max-width: 1200px) {
+  aside {
+    padding: 20px 10px;
+  }
+}
+@media (max-width: 992px) {
+  aside span {
+    display: none;
+  }
+}
+aside figure {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+aside figure img {
+  width: 40px;
+}
+aside figure span {
+  font-size: 25px;
+  color: #1db954;
+  font-weight: bold;
+}
+aside nav {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  gap: 30px;
+}
+aside nav a {
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+aside nav a:hover {
+  background-color: #1db954;
+  color: #121212;
+}
+@media (max-width: 992px) {
+  aside nav a i {
+    font-size: 23px;
+  }
+}
+
+main {
+  background-color: #282828;
+  width: 100%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow: auto;
+}
+main header {
+  background-color: #121212;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  /* form */
+}
+main header form {
+  display: flex;
+  width: 100%;
+  box-shadow: 0 0 8px;
+  max-width: 350px;
+  border-radius: 5px;
+}
+@media (max-width: 768px) {
+  main header form {
+    max-width: unset;
+  }
+}
+main header form input {
+  background-color: transparent;
+  padding: 15px;
+  width: 100%;
+  color: rgba(255, 255, 255, 0.78);
+}
+main header form button {
+  background: none;
+  color: rgba(255, 255, 255, 0.78);
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: 15px;
+}
+main header nav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+@media (max-width: 768px) {
+  main header nav {
+    display: none;
+  }
+}
+main header nav a {
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+main header nav a:hover {
+  color: white;
+}
+main section {
+  margin-top: 20px;
+}
+main section #music-list {
+  margin-top: 25px;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+main section #music-list .card {
+  background-color: #121212;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 10px;
+  height: -moz-fit-content;
+  height: fit-content;
+  cursor: pointer;
+}
+main section #music-list .card:hover .play {
+  opacity: 1;
+  bottom: 20px;
+}
+main section #music-list .card figure {
+  position: relative;
+}
+main section #music-list .card figure img {
+  width: 100%;
+  border-radius: 10px;
+}
+main section #music-list .card figure .play {
+  position: absolute;
+  right: 10px;
+  bottom: -20px;
+  opacity: 0;
+  background-color: #1db954;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-size: 23px;
+  transition: all 0.3s;
+}
+main section #music-list .card figure .play i {
+  pointer-events: none;
+}
+main section #music-list .card figure .play:hover {
+  rotate: 360deg;
+  scale: 1.1;
+  background-color: #0f6d32;
+}
+main section #music-list .card .card-info {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.player {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+.player .info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.player .info #music-image {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+.player .info #music-title {
+  font-size: 17px;
+  font-weight: 500;
+}
+.player .info #artist-title {
+  color: rgb(150, 150, 150);
+}
+.player #music-sound {
+  width: 40%;
+  color: #333333;
+}
+@media (max-width: 992px) {
+  .player #music-sound {
+    width: 60%;
+  }
+}
+.player .icons {
+  display: flex;
+  gap: 20px;
+  font-size: 20px;
+  margin-right: 20px;
+}
+@media (max-width: 992px) {
+  .player .icons {
+    display: none;
+  }
+}
+
+@keyframes turn {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate {
+  animation: turn 4s infinite linear;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: black;
+  color: rgba(255, 255, 255, 0.78);
+  height: 100vh;
+  padding: 20px;
+  overflow: hidden;
+}
+
+a {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.layout {
+  display: flex;
+  gap: 20px;
+  height: calc(100vh - 120px);
+}
+
+/* From Uiverse.io by alexruix */
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  --cell-size: 52px;
+  --cell-spacing: 1px;
+  --cells: 3;
+  --total-size: calc(var(--cells) * (var(--cell-size) + 2 * var(--cell-spacing)));
+  display: flex;
+  flex-wrap: wrap;
+  width: var(--total-size);
+  height: var(--total-size);
+}
+
+.cell {
+  flex: 0 0 var(--cell-size);
+  margin: var(--cell-spacing);
+  background-color: transparent;
+  box-sizing: border-box;
+  border-radius: 4px;
+  animation: 1.5s ripple ease infinite;
+}
+
+.cell.d-1 {
+  animation-delay: 100ms;
+}
+
+.cell.d-2 {
+  animation-delay: 200ms;
+}
+
+.cell.d-3 {
+  animation-delay: 300ms;
+}
+
+.cell.d-4 {
+  animation-delay: 400ms;
+}
+
+.cell:nth-child(1) {
+  --cell-color: #00FF87;
+}
+
+.cell:nth-child(2) {
+  --cell-color: #0CFD95;
+}
+
+.cell:nth-child(3) {
+  --cell-color: #17FBA2;
+}
+
+.cell:nth-child(4) {
+  --cell-color: #23F9B2;
+}
+
+.cell:nth-child(5) {
+  --cell-color: #30F7C3;
+}
+
+.cell:nth-child(6) {
+  --cell-color: #3DF5D4;
+}
+
+.cell:nth-child(7) {
+  --cell-color: #45F4DE;
+}
+
+.cell:nth-child(8) {
+  --cell-color: #53F1F0;
+}
+
+.cell:nth-child(9) {
+  --cell-color: #60EFFF;
+}
+
+/*Animation*/
+@keyframes ripple {
+  0% {
+    background-color: transparent;
+  }
+  30% {
+    background-color: var(--cell-color);
+  }
+  60% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: transparent;
+  }
+}/*# sourceMappingURL=style.css.map */

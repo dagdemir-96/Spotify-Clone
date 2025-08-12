@@ -1,0 +1,142 @@
+main {
+    //hea
+    background-color: $grayColor;
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    overflow: auto;
+
+    header {
+        background-color: $blackColor;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 20px;
+        border-radius: 10px;
+
+        /* form */
+        form {
+            display: flex;
+            width: 100%;
+            box-shadow: 0 0 8px;
+            max-width: 350px;
+            border-radius: 5px;
+
+            @include md {
+                max-width: unset;
+            }
+
+            input {
+                background-color: transparent;
+                padding: 15px;
+                width: 100%;
+                color: $textColor;
+
+            }
+
+            button {
+                background: none;
+                color: $textColor;
+                cursor: pointer;
+                margin-right: 10px;
+                font-size: 15px;
+            }
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            @include md {
+                display: none;
+            }
+
+            a {
+                font-size: 14px;
+                cursor: pointer;
+                transition: all 0.3s;
+
+                &:hover {
+                    color: white;
+                }
+            }
+        }
+    }
+
+
+
+
+     // Section
+  section {
+    margin-top: 20px;
+
+    // Music List
+    #music-list {
+      margin-top: 25px;
+      height: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      .card {
+        background-color: #121212;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        border-radius: 10px;
+        height: fit-content;
+        cursor: pointer;
+        &:hover .play {
+          opacity: 1;
+          bottom: 20px;
+        }
+        figure {
+          position: relative;
+          img {
+            width: 100%;
+            border-radius: 10px;
+           
+          }
+
+          .play {
+            position: absolute;
+            right: 10px;
+            bottom: -20px;
+            opacity: 0;
+            background-color: $greenColor;
+            width: 40px;
+            height: 40px;
+            display: grid;
+            place-items:center;
+            border-radius: 50%;
+            font-size: 23px;
+            transition: all 0.3s;
+            i {
+              // Bu elemanın imleç olaylarını kapat
+              pointer-events: none;
+              
+            }
+            &:hover {
+              rotate: 360deg;
+              scale: 1.1;
+              background-color: #0f6d32;
+            }
+          }
+        }
+
+        .card-info {
+          
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+        }
+      }
+    }
+  }
+}

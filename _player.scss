@@ -1,0 +1,60 @@
+.player{
+    display: flex;
+    align-items: center;
+justify-content: space-between;
+padding: 20px 0;
+
+.info{
+display: flex;
+align-items: center;
+gap: 10px;
+
+    #music-image{
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+
+    }
+    #music-title{
+        font-size: 17px;
+        font-weight: 500;
+    }
+    #artist-title{
+        color: rgb(150, 150, 150)
+    }
+}
+
+#music-sound{
+width: 40%;
+color:#333333 ;
+@include lg{
+    width: 60%;
+}
+}
+.icons{
+    display: flex;
+    gap: 20px;
+    font-size: 20px;
+    margin-right: 20px;
+
+    @include lg{
+        display: none;
+    }
+}
+}
+
+@keyframes turn{
+    from{
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+.animate{
+    animation: turn 4s infinite linear ;
+}
